@@ -2,6 +2,9 @@
 
 A simple package that uses [wine](https://www.winehq.org), [rpyc](https://github.com/tomerfiliba-org/rpyc) and a Python Windows version to allow using [MetaTrader5](https://pypi.org/project/MetaTrader5) on Linux.
 
+## (Optional) Build
+If the PyPI version does not run on your system (wrong Python or dependencies' versions), run `python -m build wheel` in the safe folder as `setup.py`.
+
 ## Install
 
 1. Install [Wine](https://wiki.winehq.org/Download).
@@ -15,14 +18,16 @@ A simple package that uses [wine](https://www.winehq.org), [rpyc](https://github
 4. Install [mt5](https://www.mql5.com/en/docs/integration/python_metatrader5) library on your **Windows** Python version.
 
 ```
-pip install MetaTrader5
-pip install --upgrade MetaTrader5
+wine python.exe -m pip install MetaTrader5
+wine python.exe -m pip install --upgrade MetaTrader5
 ```
 
 5. Install this package on both **Windows** and **Linux** Python versions:
 
 ```
-pip install mt5linux
+wine python.exe -m pip install mt5linux (or /path/to/build/mt5linux-version.whl)
+python -m pip install mt5linux
+
 ```
 
 ## How To Use
